@@ -6,10 +6,10 @@ const schema = new Schema({
     imagePath: String
 });
 
-interface IPhoto extends Document{
-    title: string,
-    description: string,
-    imagePath: string
+export interface IPhoto extends Document {
+    title: string;
+    description: string;
+    imagePath: string;
 }
 
 export default model<IPhoto>('Photo', schema);
