@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router'
-
+import { environment } from "../../../environments/environment.development"
 import { PhotoService } from '../../services/photo.service'
 import {Photo} from '../../interfaces/Photo'
 
@@ -15,6 +15,7 @@ export class PhotoPreviewComponent implements OnInit {
   photo: Photo;
   showModal: boolean = false;
   showModalMsj: string = '';
+  url: string= environment.urlUploadsServer;
 
   constructor(
     private activatedRoute: ActivatedRoute,
@@ -53,6 +54,11 @@ export class PhotoPreviewComponent implements OnInit {
         this.showModal=true;
       }); 
     return false;
+  }
+
+  back():boolean{
+    this.router.navigate(['/photos']);
+    return true;
   }
 
   toggleModal() {

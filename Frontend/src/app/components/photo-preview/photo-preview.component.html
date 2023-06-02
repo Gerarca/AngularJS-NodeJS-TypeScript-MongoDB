@@ -4,13 +4,15 @@
 <ng-template #main_content>
     <div class="grid grid-cols-2 gap-3 rounded border p-4 shadow w-full">
 
-        <img [src]="'http://localhost:3000/' + photo.imagePath" class="img-fluid w-full">
+        <img [src]="url + photo.imagePath" class="h-96 w-auto mx-auto">
 
-
-        <form class="flex flex-col">
+        <form class="flex flex-col"> 
             <input type="text" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" placeholder="Photo's Title" [value]="photo.title" #title>
-            <textarea rows="2" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline resize-none my-4" placeholder="Photo's Description" [value]="photo.description" #description></textarea>
+            <textarea rows="10" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline resize-none my-4" placeholder="Photo's Description" [value]="photo.description" #description></textarea>
             <div class="ml-auto mt-auto">
+                <button class="mb-2 mr-2 rounded-lg bg-gradient-to-r from-orange-400 via-orange-500 to-orange-600 px-5 py-2.5 text-center text-sm font-medium text-white shadow-lg shadow-orange-500/50 hover:bg-gradient-to-br focus:outline-none focus:ring-4 focus:ring-orange-300 dark:shadow-lg dark:shadow-orange-800/80 dark:focus:ring-orange-800" (click)="back()">
+                    Back
+                </button>
                 <button class="mb-2 mr-2 rounded-lg bg-gradient-to-r from-red-400 via-red-500 to-red-600 px-5 py-2.5 text-center text-sm font-medium text-white shadow-lg shadow-red-500/50 hover:bg-gradient-to-br focus:outline-none focus:ring-4 focus:ring-red-300 dark:shadow-lg dark:shadow-red-800/80 dark:focus:ring-red-800" (click)="deletePhoto(photo._id, $event)">
                     Delete
                 </button>

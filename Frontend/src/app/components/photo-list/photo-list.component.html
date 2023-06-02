@@ -4,13 +4,13 @@
 <ng-template #main_content>
     <div class="grid grid-cols-3 gap-4">
         <div class="max-w-xs" *ngFor="let photo of photos">
-            <div class="block max-w-sm p-6 bg-white border border-gray-200 rounded-lg shadow hover:bg-gray-100 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700" (click)="selectedCard(photo._id)">
-                <div class="card-header mb-1 font-mono">
-                    {{photo.title}}
+            <div class="h-80 block max-w-sm p-4 bg-white border border-gray-200 rounded-lg shadow hover:bg-gray-100 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700" (click)="selectedCard(photo._id)">
+                <div class="card-header font-mono">
+                    {{photo.title}} 
                 </div>
-                <img [src]="'http://localhost:3000/' + photo.imagePath" class="img-fluid w-100">
+                <img [src]="url + photo.imagePath" class="h-36 max-w-full py-2 mx-auto">
                 <div class="card-body mt-1">
-                    <p class="font-mono text-gray-700 text-opacity-50 ">{{photo.description}}</p>
+                    <p class="font-mono text-gray-700 text-opacity-50 ">{{photo.description.substr(0,90)+'....'}}</p>
                 </div>
             </div>
         </div>

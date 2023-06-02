@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router'
-
+import { environment } from '../../../environments/environment.development'
 import { PhotoService } from '../../services/photo.service'
 import { Photo } from '../../interfaces/Photo'
 
@@ -12,13 +12,14 @@ import { Photo } from '../../interfaces/Photo'
 export class PhotosListComponent implements OnInit {
 
   photos: Photo[] = [];
+  url: string = environment.urlUploadsServer;
 
   constructor(
     private photoService: PhotoService,
     private router: Router 
-  ) { }
+  ) {}
 
-  ngOnInit() { 
+  ngOnInit() {   
     this.photoService.getPhotos()
       .subscribe( 
         res => { 
