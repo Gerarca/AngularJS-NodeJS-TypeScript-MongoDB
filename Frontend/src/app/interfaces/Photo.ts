@@ -1,6 +1,6 @@
-export interface IPhoto {
+export interface Photo {
     _id?: string,
     title: string,
-    descripcion: string,
+    description: string,
     imagePath: string
 }

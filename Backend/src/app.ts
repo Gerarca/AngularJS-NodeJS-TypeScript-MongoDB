@@ -22,6 +22,6 @@ app.use(express.json());
 app.use( '/api', router );
 
 //to store files public
-app.use('./uploads', express.static(path.resolve('uploads')));
+app.use('/uploads', express.static(path.resolve('uploads')));
 
 export default app;
