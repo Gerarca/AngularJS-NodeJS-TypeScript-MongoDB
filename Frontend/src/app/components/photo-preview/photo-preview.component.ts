@@ -14,6 +14,8 @@ export class PhotoPreviewComponent implements OnInit {
   id: string = ' ';
   photo: Photo;
   showModal: boolean = false;
+  showModalMsj: string = '';
+
   constructor(
     private activatedRoute: ActivatedRoute,
     private photoService: PhotoService,
@@ -33,25 +35,28 @@ export class PhotoPreviewComponent implements OnInit {
     });
   }
 
-  deletePhoto(id: string | undefined) { 
+  deletePhoto(id: string | undefined, event: Event) { 
+    event.preventDefault();
     this.photoService.deletePhoto(id)
       .subscribe(res => {
         console.log(res)
-        this.showModal= true;
-        this.router.navigate(['/photos']);
+        this.showModalMsj="Image Successfully removed!";
+        this.showModal=true;
       }) 
   }
 
-  updatePhoto(title: HTMLInputElement, description: HTMLTextAreaElement): boolean {
+  updatePhoto(title: HTMLInputElement, description: HTMLTextAreaElement): boolean { 
     this.photoService.updatePhoto(this.photo._id, title.value, description.value)
       .subscribe(res => {
         console.log(res);
-        this.router.navigate(['/photos']);
+        this.showModalMsj="Image Successfully updated!";
+        this.showModal=true;
       }); 
     return false;
   }
 
   toggleModal() {
-    this.showModal = false;
+    this.showModal=false;
+    this.router.navigate(['/photos']);
   }
 }
