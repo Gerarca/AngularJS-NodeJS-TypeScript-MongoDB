@@ -8,7 +8,20 @@ some screenshots
 
 List:
 
-![alt text]('')
+![alt text](https://github.com/Gerarca/AngularJS-NodeJS-TypeScript-MongoDB/blob/main/Frontend/docs/main.png?raw=true)
+
+Create/Upload Image
+![alt text](https://github.com/Gerarca/AngularJS-NodeJS-TypeScript-MongoDB/blob/main/Frontend/docs/upload.png?raw=true)
+
+Preview Image
+![alt text](https://github.com/Gerarca/AngularJS-NodeJS-TypeScript-MongoDB/blob/main/Frontend/docs/preview.png?raw=true)
+
+Modal update Image
+![alt text](https://github.com/Gerarca/AngularJS-NodeJS-TypeScript-MongoDB/blob/main/Frontend/docs/updatedModal.png?raw=true)
+
+Modal Delete Image
+![alt text](https://github.com/Gerarca/AngularJS-NodeJS-TypeScript-MongoDB/blob/main/Frontend/docs/deleteModal.png?raw=true)
+
 
 ## Tecnologies
 
